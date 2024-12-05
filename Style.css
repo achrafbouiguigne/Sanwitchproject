@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    max-width: 800px;
+    width: 90%;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.sandwich-area {
+    background-color: #f8f8f8;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plate {
+    background-color: #e0e0e0;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.sandwich-stack {
+    width: 250px;
+    min-height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.ingredients-container {
+    background-color: #f8f8f8;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.ingredients-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.ingredient {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    cursor: move;
+    transition: transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.ingredient:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.ingredient img {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    margin-bottom: 0.5rem;
+    pointer-events: none;
+}
+
+.ingredient p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* Animation pour le drag and drop */
+.ingredient[draggable="true"]:active {
+    opacity: 0.7;
+    cursor: grabbing;
+}
+
+.sandwich-stack img {
+    width: 80%;
+    height: auto;
+    margin: -10px 0;
+}
+
+@media (max-width: 600px) {
+    .game-container {
+        padding: 1rem;
+    }
+    
+    .plate {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .ingredients-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .ingredient img {
+        max-width: 80px;
+    }
+}
